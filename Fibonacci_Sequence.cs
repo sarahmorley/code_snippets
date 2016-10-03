@@ -39,17 +39,27 @@ namespace Fibonacci_Sequence
 
             public static int GetNthFibonacciNo (int n)
         {
-            int number = n - 1;
-            int[] fibonacci = new int[number + 1];
-            fibonacci[0] = 0;
-            fibonacci[1] = 1;
-            
-            for(int i = 2; i <= number; i++)
+            if (n == 0)
             {
-                fibonacci[i] = fibonacci[i - 2] + fibonacci[i - 1];
+                return 0;
             }
+            else if (n == 1)
+            {
+                return 1;
+            }
+            else
+            {
+                int number = n - 1;
+                int[] fibonacci = new int[number + 1];
+                fibonacci[0] = 0;
+                fibonacci[1] = 1;
 
-            return fibonacci[number];
+                for (int i = 2; i <= number; i++)
+                {
+                    fibonacci[i] = fibonacci[i - 2] + fibonacci[i - 1];
+                }
+
+                return fibonacci[number];
         }
  
         
